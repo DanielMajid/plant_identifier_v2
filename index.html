@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botanic</title>
+</head>
+<body>
+    <h1> BOTANIC</h1>
+    <h2>Plant Identifier</h2>
+    <div id="body_copy">
+        <h3>Please select a filepath</h3>
+        <p>Choose up to 5 file paths.</p>
+        <p>All photos must be of the same plant</p>
+        <p>For best results, use photos larger than 800x800px</p>
+        <p>Total size of submission should not exceed 50mb</p>
+    </div>
+    <div id="file-input">
+        <input type="file" id="my_file" accept="image/*" multiple>
+    </div>
+    <button id="submit_photos">Submit Photos</button>
+    <p id="demo"></p>
+    <script>
+        const element = document.getElementById("submit_photos");
+        element.addEventListener("click", submit_api);
+
+        function submit_api() {
+          document.getElementById("demo").innerHTML += "First function was executed! "
+          window.location.href = "results_page.html"
+        }
+        </script>
+    </body>
+</html>
