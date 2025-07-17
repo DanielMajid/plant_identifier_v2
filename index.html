@@ -19,15 +19,19 @@
         <input type="file" id="my_file" accept="image/*" multiple>
     </div>
     <button id="submit_photos">Submit Photos</button>
-    <p id="demo"></p>
-    <script>
+    <script type="module">
+        import {prepare_api} from '/script.js';
         const element = document.getElementById("submit_photos");
-        element.addEventListener("click", submit_api);
-
-        function submit_api() {
-          document.getElementById("demo").innerHTML += "First function was executed! "
-          window.location.href = "results_page.html"
-        }
-        </script>
-    </body>
+        element.addEventListener("click", async () => {
+            try {
+                await prepare_api();
+                window.location.href = "results_page.html";
+            }
+            catch (error) {
+                console.error("Error during API call or redirection:", error);
+                alert("An error occurred. Please try again.");
+            }
+        });
+    </script>
+</body>
 </html>
