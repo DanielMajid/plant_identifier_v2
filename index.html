@@ -14,24 +14,7 @@
         <p>All photos must be of the same plant</p>
         <p>For best results, use photos larger than 800x800px</p>
         <p>Total size of submission should not exceed 50mb</p>
-    </div>
-    <div id="file-input">
-        <input type="file" id="my_file" accept="image/*" multiple>
-    </div>
-    <button id="submit_photos">Submit Photos</button>
-    <script type="module">
-        import {prepare_api} from '/script.js';
-        const element = document.getElementById("submit_photos");
-        element.addEventListener("click", async () => {
-            try {
-                await prepare_api();
-                window.location.href = "results_page.html";
-            }
-            catch (error) {
-                console.error("Error during API call or redirection:", error);
-                alert("An error occurred. Please try again.");
-            }
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/ai-taxonomist/dist/src/+esm" type="module"></script>
+    <ai-taxonomist apiKey="2b107JggFCQpHKLg34Tr70wPUO"></ai-taxonomist>
 </body>
 </html>
